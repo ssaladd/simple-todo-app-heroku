@@ -5,8 +5,8 @@ from django.db import models
 class Task(models.Model):
   title = models.CharField(max_length=200)
   completed = models.BooleanField(default=False, blank=True, null=True)
-  #priority = models.IntegerField(default=1)
-  #date = models.CharField(max_length=200)
+  priority = models.IntegerField(default=0)
+  date = models.CharField(max_length=199)
       
   def __str__(self):
     return self.title

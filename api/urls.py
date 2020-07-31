@@ -1,5 +1,6 @@
-from django.urls import path
+from django.urls import path, re_path
 from . import views
+from django.views.generic import TemplateView
 
 urlpatterns = [
 	path('', views.apiOverview, name="api-overview"),
@@ -9,4 +10,5 @@ urlpatterns = [
 
 	path('task-update/<str:pk>/', views.taskUpdate, name="task-update"),
 	path('task-delete/<str:pk>/', views.taskDelete, name="task-delete"),
+	#re_path('.*', TemplateView.as_view(template_name='index.html'))
 ]
